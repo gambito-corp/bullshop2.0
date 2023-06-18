@@ -13,14 +13,15 @@
             <x-layout.partials.aside></x-layout.partials.aside>
             <main class="w-full">
                 {{ $slot }}
+                {{-- <footer class="py-4 bg-gray-200">
+                    Footer
+                </footer> --}}
             </main>
         </div>
     </div>
     
     @stack('modals')
-    
     <x-layout.partials.scripts></x-layout.partials.scripts>
     </body>
     </html>
-    
 </div>
