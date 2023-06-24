@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: {
-    enabled: production,
+    // enabled: production,
     content: [
       './resources/views/**/*.blade.php',
       // Agrega aquí otras rutas de archivos de plantilla Blade si es necesario.
