@@ -1,3 +1,3 @@
-import './bootstrap';
-import 'tailwindcss/tailwind.css'
-import 'alpinejs'
+import Alpine from 'alpinejs'
+window.Alpine = Alpine
+Alpine.start()
