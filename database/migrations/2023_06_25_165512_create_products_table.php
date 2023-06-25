@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('stock')->nullable();
             $table->string('marca')->nullable();
             $table->string('talla')->nullable();
+            $table->string('color')->nullable();
             $table->string('image')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');

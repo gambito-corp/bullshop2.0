@@ -6,5 +6,6 @@ interface WoocommerceInterface
 {
     public function getCategories();
     public function getProducts();
-    public function getProduct();
+    public function getProducts2();
+    public function getProduct($id);
 }

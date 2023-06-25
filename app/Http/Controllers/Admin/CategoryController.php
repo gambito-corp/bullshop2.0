@@ -18,9 +18,7 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $products = $this->woocommerceService->getProducts();
-
-        dd($products);
+        $products = $this->woocommerceService->getProducts2();
 
         return view('.index', compact('products'));
     }
