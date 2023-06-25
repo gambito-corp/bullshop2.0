@@ -8,6 +8,8 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
+    public $impersonatingUser;
+
     /**
      * Create a new component instance.
      */

@@ -1,17 +1,13 @@
 <?php
 
-namespace App\View\Components\Layout\Partials;
+namespace App\View\Components\Admin\Category;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Aside extends Component
+class Index extends Component
 {
-
-
-    public $open = false;
-
     /**
      * Create a new component instance.
      */
@@ -25,8 +21,6 @@ class Aside extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.layout.partials.aside', [
-            'open' => $this->open,
-        ]);
+        return view('components.admin.category.index');
     }
 }

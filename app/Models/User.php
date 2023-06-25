@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -45,21 +46,17 @@ class User extends Authenticatable
     ];
 
     //Accesores y Mutadores
-    /**
-     * Set the user's password.
-     *
-     * @param  string  $value
-     * @return void
-     */
+    public function getProfileImageAttribute()
+    {
+        if ($this->attributes['image']) {
+            return asset('storage/images/users/' . $this->attributes['image']);
+        }
+
+        return asset('storage/images/stock/user.jpg'); // Cambia esta ruta a la de tu imagen por defecto
+    }
+
     // public function setPasswordAttribute($value)
     // {
     //     $this->attributes['password'] = Hash::make($value);
     // }
-
-
-    //Relaciones
-    public function Roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
 }
