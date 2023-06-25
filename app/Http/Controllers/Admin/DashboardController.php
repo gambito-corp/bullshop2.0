@@ -9,6 +9,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        //
+        // dd('hola');
+        return view('components.admin.dashboard.index');
     }
 }

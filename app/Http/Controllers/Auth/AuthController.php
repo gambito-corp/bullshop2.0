@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function getLogin()
     {
-        return view('auth.login');
+        return view('components.auth.login');
     }
 
     public function login(Request $request)
@@ -19,6 +19,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            // dd('si');
             return redirect()->intended('dashboard');
         }
 

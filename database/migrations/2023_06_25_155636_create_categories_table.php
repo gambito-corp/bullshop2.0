@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique();
+            $table->string('name', 255);
+            $table->string('wp_id', 255)->nullable();
+            $table->string('slug', 255)->nullable();
+            $table->string('description', 255)->nullable();
+            $table->string('display', 100)->nullable();
+            $table->string('image', 100)->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('permissions');
+        Schema::dropIfExists('categories');
     }
 };
