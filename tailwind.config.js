@@ -7,7 +7,15 @@ module.exports = {
         './resources/**/*.vue',
     ],
     theme: {
-        extend: {},
+        extend: {
+            textStyles: {
+                'Test': {
+                'font-size': '3rem',
+                'font-weight': 'bold',
+                'text-decoration': 'underline',
+                },
+            },
+        },
     },
     plugins: [],
 }
